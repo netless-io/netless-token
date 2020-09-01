@@ -4,9 +4,9 @@ const { v1: uuidv1 } = require("uuid");
 
 // 数字越小，权限越大
 const tokenRole = {
-    Admin: 0,
-    Writer: 1,
-    Reader: 2,
+    Admin: "0",
+    Writer: "1",
+    Reader: "2",
 };
 module.exports.tokenRole = tokenRole;
 
@@ -88,7 +88,7 @@ const stringify = (object) => {
 /**
  * 根据 prefix 生成相应的 token
  * @param {"NETLESSSDK_" | "NETLESSROOM_" | "NETLESSTASK_"} prefix - 相关 token 的前缀
- * @return {function(string, string, string, SdkToken | RoomToken | TaskToken): string}
+ * @return {function(string, string, number, SdkToken | RoomToken | TaskToken): string}
  */
 const createToken = prefix => {
     return (accessKey, secretAccessKey, lifespan, content) => {
