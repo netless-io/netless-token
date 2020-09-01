@@ -3,9 +3,9 @@ import { v1 as uuidv1 } from "uuid";
 
 export enum TokenRole {
     // 数字越小，权限越大
-    Admin = 0,
-    Writer = 1,
-    Reader = 2,
+    Admin = "0",
+    Writer = "1",
+    Reader = "2",
 }
 
 export enum TokenPrefix {
