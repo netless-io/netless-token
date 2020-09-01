@@ -27,19 +27,45 @@ const (
 	taskPrefix = "NETLESSTASK_"
 )
 
+
+type SDKContent struct {
+	role string
+}
+
+type RoomContent struct {
+	role string
+	uuid string
+}
+
+type TaskContent struct {
+	role string
+	uuid string
+}
+
 // SDKToken 生成 sdk token
-func SDKToken(accessKey string, secretAccessKey string, lifespan int64, content map[string]string) string {
-	return createToken(sdkPrefix)(accessKey, secretAccessKey, lifespan, &content)
+func SDKToken(accessKey string, secretAccessKey string, lifespan int64, content *SDKContent) string {
+	m := map[string]string{
+		"role": content.role,
+	}
+	return createToken(sdkPrefix)(accessKey, secretAccessKey, lifespan, &m)
 }
 
 // RoomToken 生成 room token
-func RoomToken(accessKey string, secretAccessKey string, lifespan int64, content map[string]string) string {
-	return createToken(roomPrefix)(accessKey, secretAccessKey, lifespan, &content)
+func RoomToken(accessKey string, secretAccessKey string, lifespan int64, content *RoomContent) string {
+	m := map[string]string{
+		"role": content.role,
+		"uuid": content.uuid,
+	}
+	return createToken(roomPrefix)(accessKey, secretAccessKey, lifespan, &m)
 }
 
 // TaskToken 生成 task token
-func TaskToken(accessKey string, secretAccessKey string, lifespan int64, content map[string]string) string {
-	return createToken(taskPrefix)(accessKey, secretAccessKey, lifespan, &content)
+func TaskToken(accessKey string, secretAccessKey string, lifespan int64, content *TaskContent) string {
+	m := map[string]string{
+		"role": content.role,
+		"uuid": content.uuid,
+	}
+	return createToken(taskPrefix)(accessKey, secretAccessKey, lifespan, &m)
 }
 
 // bufferToBase64 buffer 转 base64
@@ -100,7 +126,9 @@ func stringify(m *map[string]string) string {
 
 	var arr []string
 	for _, k := range keys {
-		arr = append(arr, encodeURIComponent(k)+"="+encodeURIComponent((*m)[k]))
+		if (*m)[k] != "" {
+			arr = append(arr, encodeURIComponent(k)+"="+encodeURIComponent((*m)[k]))
+		}
 	}
 
 	return strings.Join(arr, "&")

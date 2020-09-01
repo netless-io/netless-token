@@ -87,9 +87,10 @@ func Test_hmac256(t *testing.T) {
 }
 
 func Test_SDKToken(t *testing.T) {
-	s := SDKToken("netless", "x", 1, map[string]string{
-		"role": AdminRole,
-	})
+	c := SDKContent{
+		role: AdminRole,
+	}
+	s := SDKToken("netless", "x", 1, &c)
 
 	if !strings.HasPrefix(s, sdkPrefix) {
 		t.Errorf("SDKToken result expected prefix is %s, but result is: %s", sdkPrefix, s)
@@ -97,9 +98,11 @@ func Test_SDKToken(t *testing.T) {
 }
 
 func Test_RoomToken(t *testing.T) {
-	s := RoomToken("netless", "x", 1, map[string]string{
-		"role": ReaderRole,
-	})
+	c := RoomContent{
+		role: ReaderRole,
+		uuid: "this is uuid",
+	}
+	s := RoomToken("netless", "x", 1, &c)
 
 	if !strings.HasPrefix(s, roomPrefix) {
 		t.Errorf("RoomToken result expected prefix is %s, but result is: %s", sdkPrefix, s)
@@ -107,9 +110,11 @@ func Test_RoomToken(t *testing.T) {
 }
 
 func Test_TaskToken(t *testing.T) {
-	s := TaskToken("netless", "x", 1, map[string]string{
-		"role": WriterRole,
-	})
+	c := TaskContent{
+		role: WriterRole,
+		uuid: "this is uuid",
+	}
+	s := TaskToken("netless", "x", 1, &c)
 
 	if !strings.HasPrefix(s, taskPrefix) {
 		t.Errorf("TaskToken result expected prefix is %s, but result is: %s", sdkPrefix, s)
