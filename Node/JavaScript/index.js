@@ -3,19 +3,19 @@ const { v1: uuidv1 } = require("uuid");
 
 
 // 数字越小，权限越大
-const tokenRole = {
+const TokenRole = {
     Admin: "0",
     Writer: "1",
     Reader: "2",
 };
-module.exports.tokenRole = tokenRole;
+module.exports.TokenRole = TokenRole;
 
-const tokenPrefix = {
+const TokenPrefix = {
     SDK: "NETLESSSDK_",
     ROOM: "NETLESSROOM_",
     TASK: "NETLESSTASK_",
 };
-module.exports.tokenPrefix = tokenPrefix
+module.exports.TokenPrefix = TokenPrefix
 
 /**
  * buffer 转 base64，且格式化字符
@@ -114,10 +114,10 @@ const createToken = prefix => {
 };
 
 // 生成 sdk token
-module.exports.sdkToken = createToken(tokenPrefix.SDK);
+module.exports.sdkToken = createToken(TokenPrefix.SDK);
 
 // 生成 room token
-module.exports.roomToken = createToken(tokenPrefix.ROOM);
+module.exports.roomToken = createToken(TokenPrefix.ROOM);
 
 // 生成 task token
-module.exports.taskToken = createToken(tokenPrefix.TASK);
+module.exports.taskToken = createToken(TokenPrefix.TASK);

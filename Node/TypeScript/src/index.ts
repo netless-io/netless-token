@@ -77,13 +77,13 @@ const createToken = <T extends {}>(
 };
 
 // 生成 sdk token
-export const SdkToken = createToken<SdkTokenTags>(TokenPrefix.SDK);
+export const sdkToken = createToken<SdkTokenTags>(TokenPrefix.SDK);
 
 // 生成 room token
-export const RoomToken = createToken<RoomTokenTags>(TokenPrefix.ROOM);
+export const roomToken = createToken<RoomTokenTags>(TokenPrefix.ROOM);
 
 // 生成 task token
-export const TaskToken = createToken<TaskTokenTags>(TokenPrefix.TASK);
+export const taskToken = createToken<TaskTokenTags>(TokenPrefix.TASK);
 
 export type SdkTokenTags = {
     readonly role?: TokenRole;
