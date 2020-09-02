@@ -93,7 +93,6 @@ tags
 *.pdb
 
 # Kernel Module Compile Results
-*.mod*
 *.cmd
 .tmp_versions/
 modules.order
@@ -322,7 +321,6 @@ build-iPhoneSimulator/
 *.dll
 
 # Fortran module files
-*.mod
 *.smod
 
 # Compiled Static libraries
