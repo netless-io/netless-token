@@ -1,0 +1,40 @@
+{
+    "name": "netless-token/php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Black-Hole",
+            "email": "158blackhole@gmail.com"
+        }
+    ],
+    "scripts": {
+        "phpcs": "php-cs-fixer fix --using-cache=no -vvv --diff --allow-risky=yes --show-progress=dots --config=.php_cs --ansi",
+        "phpstan": "phpstan analyse --ansi",
+        "test": "phpunit tests --colors=always --coverage-html=reports --whitelist src"
+    },
+    "scripts-descriptions": {
+        "phpcs": "Runs coding style test suite"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpstan/phpstan": "^0.12.40",
+        "phpstan/phpstan-strict-rules": "^0.12.5",
+        "phpunit/phpunit": "^9"
+    },
+    "description": "netless-token",
+    "require": {
+        "ramsey/uuid": "^4.1",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Netless\\Token\\": "src/Netless/Token"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
+    }
+}
