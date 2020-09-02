@@ -42,7 +42,6 @@ func Test_stringify(t *testing.T) {
 	}
 	s := stringify(&m)
 
-	//if s != "{\"b\":\"1\",\"a\":\"2\"}" {
 	if s != "a=2&b=1" {
 		t.Errorf("encodeURIComponent(\"net less\") expected be \"net%%20ess\", but %s got", s)
 	}

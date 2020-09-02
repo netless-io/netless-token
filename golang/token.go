@@ -1,4 +1,4 @@
-package main
+package token
 
 import (
 	"crypto/hmac"
@@ -26,7 +26,6 @@ const (
 	roomPrefix = "NETLESSROOM_"
 	taskPrefix = "NETLESSTASK_"
 )
-
 
 type SDKContent struct {
 	role string
