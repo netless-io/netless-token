@@ -17,7 +17,11 @@ module NetlessToken
     TASK = "NETLESSTASK_"
   end
 
-  def create_token(prefix, access_key, secret_access_key, lifespan, content)
+  def self.to_base64(str)
+    Base64.urlsafe_encode64(str, padding: false)
+  end
+
+  def self.create_token(prefix, access_key, secret_access_key, lifespan, content)
     object = {
       ak: access_key,
       nonce: UUIDTools::UUID.timestamp_create.to_s
@@ -32,7 +36,7 @@ module NetlessToken
     digest = OpenSSL::Digest.new('sha256')
     hmac = OpenSSL::HMAC.hexdigest(digest, secret_access_key, infomation)
     object.store(:sig, hmac)
-    prefix + Base64.urlsafe_encode64(URI.encode_www_form(object.sort.to_h)).gsub(/=+$/, "")
+    prefix + to_base64(URI.encode_www_form(object.sort.to_h))
   end
 
   def self.sdk_token *args
