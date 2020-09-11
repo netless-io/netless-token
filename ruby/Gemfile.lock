@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    uuidtools (2.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  uuidtools (~> 2.2)
+
+BUNDLED WITH
+   2.1.4
