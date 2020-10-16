@@ -5,12 +5,12 @@
 
 你需要获取 ``AK``、和 ``SK``（获取方式请参考[《项目与权限》](https://developer.netless.link/document-zh/home/project-and-authority#签出-token)。之后，根据自己所掌握的语言，选择该 repo 中的 sample codes，将其迁移到自己的项目中。最后，在需要时，传入 ``AK`` 和 ``SK`` 并调用函数生成 Token。
 
-- [JavaScript](/Node/JavaScript/README.md)
-- [TypeScript](/Node/TypeScript/README.md)
-- [C#](/csharp/README.md)
-- [Go](/golang/README.md)
-- [PHP](/php/README.md)
-- [Ruby](/ruby/README.md)
+- [JavaScript](/Node/JavaScript)
+- [TypeScript](/Node/TypeScript)
+- [C#](/csharp)
+- [Go](/golang)
+- [PHP](/php)
+- [Ruby](/ruby)
 
 如果该 repo 没有提供满足你需求的语言的 sample codes，你可以
 
