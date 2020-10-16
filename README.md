@@ -1,4 +1,7 @@
 # netless-token
+
+[English](README-en.md)
+
 该项目用于签出 [Netless](https://netless.link) 服务可识别的 Token，具体请参考[《签出 Token｜项目与权限》](https://developer.netless.link/document-zh/home/project-and-authority#签出-token)。
 
 ## 如何使用
@@ -12,7 +15,7 @@
 - [PHP](/php)
 - [Ruby](/ruby)
 
-如果该 repo 没有提供满足你需求的语言的 sample codes，你可以
+如果该 repo 没有提供满足你需求的语言的 sample codes，你可以。
 
 - 尝试根据已有的语言仿写你需要语言的等效 codes。
 - 通过向 Netless 服务发起 HTTP 请求来申请 Token，参考[《生成 Token》](https://developer.netless.link/server-zh/home/server-token)。但我们**不推荐**这种做法。
