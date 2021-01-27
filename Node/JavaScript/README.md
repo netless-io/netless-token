@@ -7,7 +7,7 @@
 #### SDK Token
 
 ```javascript
-const  { sdkToken, TokenPrefix } = require("./src/index");
+const  { sdkToken, TokenPrefix } = require("./index");
 
 // 生成 sdk token
 const netlessSDKToken = sdkToken(
