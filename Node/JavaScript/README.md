@@ -7,7 +7,7 @@
 #### SDK Token
 
 ```javascript
-const  { sdkToken, TokenPrefix } = require("./src/index");
+const  { sdkToken, TokenPrefix } = require("./index");
 
 // 生成 sdk token
 const netlessSDKToken = sdkToken(
@@ -23,7 +23,7 @@ const netlessSDKToken = sdkToken(
 #### Room Token
 
 ```javascript
-const  { roomToken, TokenPrefix } = require("./src/index");
+const  { roomToken, TokenPrefix } = require("./index");
 
 // 生成 room token
 const netlessRoomToken = roomToken(
@@ -40,7 +40,7 @@ const netlessRoomToken = roomToken(
 #### Task Token
 
 ```javascript
-const  { taskToken, TokenPrefix } = require("./src/index");
+const  { taskToken, TokenPrefix } = require("./index");
 
 
 // 生成 task token
