@@ -14,6 +14,7 @@
 - [Go](/golang)
 - [PHP](/php)
 - [Ruby](/ruby)
+- [Python][/python]
 
 如果该 repo 没有提供满足你需求的语言的 sample codes，你可以。
 
