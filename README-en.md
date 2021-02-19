@@ -14,7 +14,7 @@ You need to obtain ``AK`` and ``SK`` (please refer to [《项目与权限》](ht
 - [Go](/golang)
 - [PHP](/php)
 - [Ruby](/ruby)
-- [Python][/python]
+- [Python](/python)
 
 If the repo does not provide sample codes in a language that meets your needs, you can do the following.
 
