@@ -46,7 +46,7 @@ import "your path"
 
 c := token.TaskContent{
     role: token.WriterRole, // 可以选择 token.AdminRole / token.ReaderRole
-    uuid: "房间 UUID",
+    uuid: "任务 UUID",
 }
 
 netlessRoomToken := token.TaskToken(

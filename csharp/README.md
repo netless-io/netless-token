@@ -62,7 +62,7 @@ class Program
             1000 * 60 * 10, // token 有效时间 (10 分钟), 为 0 时, 即永不过期. 单位毫秒
             new TaskContent(
                 TokenRole.Admin, // 可以选择 Admin/Writter/Reader
-                "房间的 UUID"
+                "任务的 UUID"
             )
         );
     }
