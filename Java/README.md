@@ -34,7 +34,7 @@ String roomToken = Token.roomToken("netless ak",
 ```java
 Map<String, String> map = new HashMap<>();
         map.put("role", Token.TokenRole.Writer.getValue()); // 可以选择 TokenRole.Reader / TokenRole.Admin
-        map.put("uuid", "房间的 UUID");
+        map.put("uuid", "任务的 UUID");
 
 String taskToken = Token.taskToken("netless ak",
         "netless sk",

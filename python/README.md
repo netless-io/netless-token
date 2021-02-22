@@ -41,6 +41,6 @@ netless_token.task_token(
     "netless sk",
     1000 * 60 * 10, # token 有效时间 (10分钟)，为 0 时，即永不过期。单位毫秒
     role=netless_token.READER,  # 可以选择 netless_token.WRITER / netless_token.ADMIN 
-    uuid="房间的 UUID"
+    uuid="任务的 UUID"
 )
 ```

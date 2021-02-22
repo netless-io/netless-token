@@ -49,7 +49,7 @@ const netlessTaskToken = taskToken(
     1000 * 60 * 10, // token 有效时间 (10分钟)，为 0 时，即永不过期。单位毫秒
     {
             role: TokenRole.Writer,  // 可以选择 TokenRole.Admin / TokenRole.Reader
-            uuid: "房间的 UUID"
+            uuid: "任务的 UUID"
         }
 );
 ```
