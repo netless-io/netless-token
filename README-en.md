@@ -2,11 +2,11 @@
 
 [中文版](README.md)
 
-This project is used to check out the Token that can be recognized by the [Netless](https://netless.link) service. For details, please refer to [《签出 Token｜项目与权限》](https://developer.netless.link/document-zh/home/project-and-authority#签出-token).
+This project is used to check out the Token that can be recognized by the [Agora Interactive Whiteboard](https://docs.agora.io/en/whiteboard/product_whiteboard?platform=Android) service. For details, please refer to [Interactive Whiteboard Token Overview](https://docs.agora.io/en/whiteboard/whiteboard_token_overview?platform=RESTful).
 
 ## How to use
 
-You need to obtain ``AK`` and ``SK`` (please refer to [《项目与权限》](https://developer.netless.link/document-zh/home/project-and-authority#签出-token) for obtaining methods. After that, select the sample codes in the repo according to your own language and migrate them to your own project. Finally, when needed, Pass in ``AK`` and ``SK`` and call the function to generate Token.
+You need to obtain ``AK`` and ``SK`` (please refer to [Get access keys](https://docs.agora.io/en/whiteboard/whiteboard_token_overview?platform=Android#get-access-keys) for obtaining methods. After that, select the sample codes in the repo according to your own language and migrate them to your own project. Finally, when needed, Pass in ``AK`` and ``SK`` and call the function to generate Token.
 
 - [JavaScript](/Node/JavaScript)
 - [TypeScript](/Node/TypeScript)
@@ -19,7 +19,7 @@ You need to obtain ``AK`` and ``SK`` (please refer to [《项目与权限》](ht
 If the repo does not provide sample codes in a language that meets your needs, you can do the following.
 
 - Try to imitate the equivalent codes of the language you need based on the existing language.
-- To apply for a token by initiating an HTTP request to the Netless service, refer to [《生成 Token》](https://developer.netless.link/server-zh/home/server-token). But we do **NOT** recommend this approach.
+- To apply for a token by initiating an HTTP request to the Agora Interactive Whiteboard service, refer to [Generate a Token Using RESTful API](https://docs.agora.io/en/whiteboard/generate_whiteboard_token?platform=RESTful). But we do **NOT** recommend this approach.
 
 ## Note
 
