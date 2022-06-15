@@ -16,7 +16,7 @@ import (
 
 // 数字越小，权限越大
 const (
-	AdminRole = "0"
+	AdminRole  = "0"
 	WriterRole = "1"
 	ReaderRole = "2"
 )
@@ -28,23 +28,23 @@ const (
 )
 
 type SDKContent struct {
-	role string
+	Role string
 }
 
 type RoomContent struct {
-	role string
-	uuid string
+	Role string
+	Uuid string
 }
 
 type TaskContent struct {
-	role string
-	uuid string
+	Role string
+	Uuid string
 }
 
 // SDKToken 生成 sdk token
 func SDKToken(accessKey string, secretAccessKey string, lifespan int64, content *SDKContent) string {
 	m := map[string]string{
-		"role": content.role,
+		"role": content.Role,
 	}
 	return createToken(sdkPrefix)(accessKey, secretAccessKey, lifespan, &m)
 }
@@ -52,8 +52,8 @@ func SDKToken(accessKey string, secretAccessKey string, lifespan int64, content 
 // RoomToken 生成 room token
 func RoomToken(accessKey string, secretAccessKey string, lifespan int64, content *RoomContent) string {
 	m := map[string]string{
-		"role": content.role,
-		"uuid": content.uuid,
+		"role": content.Role,
+		"uuid": content.Uuid,
 	}
 	return createToken(roomPrefix)(accessKey, secretAccessKey, lifespan, &m)
 }
@@ -61,8 +61,8 @@ func RoomToken(accessKey string, secretAccessKey string, lifespan int64, content
 // TaskToken 生成 task token
 func TaskToken(accessKey string, secretAccessKey string, lifespan int64, content *TaskContent) string {
 	m := map[string]string{
-		"role": content.role,
-		"uuid": content.uuid,
+		"role": content.Role,
+		"uuid": content.Uuid,
 	}
 	return createToken(taskPrefix)(accessKey, secretAccessKey, lifespan, &m)
 }

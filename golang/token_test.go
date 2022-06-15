@@ -1,4 +1,4 @@
-package main
+package token_test
 
 import (
 	"strings"
@@ -87,7 +87,7 @@ func Test_hmac256(t *testing.T) {
 
 func Test_SDKToken(t *testing.T) {
 	c := SDKContent{
-		role: AdminRole,
+		Role: AdminRole,
 	}
 	s := SDKToken("netless", "x", 1, &c)
 
@@ -98,8 +98,8 @@ func Test_SDKToken(t *testing.T) {
 
 func Test_RoomToken(t *testing.T) {
 	c := RoomContent{
-		role: ReaderRole,
-		uuid: "this is uuid",
+		Role: ReaderRole,
+		Uuid: "this is uuid",
 	}
 	s := RoomToken("netless", "x", 1, &c)
 
@@ -110,8 +110,8 @@ func Test_RoomToken(t *testing.T) {
 
 func Test_TaskToken(t *testing.T) {
 	c := TaskContent{
-		role: WriterRole,
-		uuid: "this is uuid",
+		Role: WriterRole,
+		Uuid: "this is uuid",
 	}
 	s := TaskToken("netless", "x", 1, &c)
 
