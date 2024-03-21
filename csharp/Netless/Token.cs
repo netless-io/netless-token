@@ -58,9 +58,9 @@ namespace Netless
     {
         private static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
-        private static string CreateToken(string prefix, string accessKey, string secretAccessKey, long lifespan, Dictionary<string, string> content)
+        private static string CreateToken(string prefix, string accessKey, string secretAccessKey, long lifespan, IDictionary<string, string> content)
         {
-            Dictionary<string, string> m = new Dictionary<string, string>
+            IDictionary<string, string> m = new SortedDictionary<string, string>
             {
                 { "ak", accessKey },
                 { "nonce", Guid.NewGuid().ToString() }
@@ -96,7 +96,7 @@ namespace Netless
             return hex.ToString();
         }
 
-        private static void MergeDictionary(Dictionary<string, string> from, Dictionary<string, string> to)
+        private static void MergeDictionary(IDictionary<string, string> from, IDictionary<string, string> to)
         {
             foreach (var entry in from)
             {
@@ -104,7 +104,7 @@ namespace Netless
             }
         }
 
-        private static string Querify(Dictionary<string, string> a)
+        private static string Querify(IDictionary<string, string> a)
         {
             List<string> parts = new List<string>();
             foreach (var e in a)
@@ -116,7 +116,7 @@ namespace Netless
 
         public static string SdkToken(string accessKey, string secretAccessKey, long lifespan, SdkContent content)
         {
-            Dictionary<string, string> m = new Dictionary<string, string>
+            IDictionary<string, string> m = new SortedDictionary<string, string>
             {
                 { "role", content.role }
             };
@@ -125,7 +125,7 @@ namespace Netless
 
         public static string RoomToken(string accessKey, string secretAccessKey, long lifespan, RoomContent content)
         {
-            Dictionary<string, string> m = new Dictionary<string, string>
+            IDictionary<string, string> m = new SortedDictionary<string, string>
             {
                 { "role", content.role },
                 { "uuid", content.uuid }
@@ -135,7 +135,7 @@ namespace Netless
 
         public static string TaskToken(string accessKey, string secretAccessKey, long lifespan, TaskContent content)
         {
-            Dictionary<string, string> m = new Dictionary<string, string>
+            IDictionary<string, string> m = new SortedDictionary<string, string>
             {
                 { "role", content.role },
                 { "uuid", content.uuid }
